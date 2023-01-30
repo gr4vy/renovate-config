@@ -11,19 +11,21 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <details>
   <summary>Default</summary>
 
-  ```json
-  {
-    "extends": ["github>gr4vy/renovate-config"]
-  }
-  ```
+```json
+{
+  "extends": ["github>gr4vy/renovate-config"]
+}
+```
+
 </details>
 
 <details>
   <summary>JavaScript</summary>
 
-  ```json
-  {
-    "extends": ["github>gr4vy/renovate-config:javascript"]
-  }
-  ```
+```json
+{
+  "extends": ["github>gr4vy/renovate-config:javascript"]
+}
+```
+
 </details>

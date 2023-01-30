@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "github>gr4vy/renovate-config",
-    ":disablePeerDependencies"
-  ],
+  "extends": ["github>gr4vy/renovate-config", ":disablePeerDependencies"],
   "rangeStrategy": "bump",
   "reviewers": ["team:javascript-team"],
   "packageRules": [
