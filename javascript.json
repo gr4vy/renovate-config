@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "github>gr4vy/renovate-config",
+    ":disablePeerDependencies"
+  ],
+  "rangeStrategy": "bump",
+  "reviewers": ["team:javascript-team"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["patch"],
+      "semanticCommitScope": "dev-deps"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "addLabels": ["minor"],
+      "semanticCommitScope": "deps"
+    },
+    {
+      "matchDepTypes": ["resolutions"],
+      "enabled": false
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ]
+}
