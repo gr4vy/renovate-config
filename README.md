@@ -9,7 +9,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 ### Available presets
 
 <details>
-  <summary>Default</summary>
+  <summary>Default</summary><br>
 
 ```json
 {
@@ -20,7 +20,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 </details>
 
 <details>
-  <summary>JavaScript</summary>
+  <summary>JavaScript</summary><br>
 
 ```json
 {
