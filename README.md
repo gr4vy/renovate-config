@@ -11,7 +11,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <details>
   <summary>Default</summary><br>
 
-<p>Uses the [config:base](https://docs.renovatebot.com/presets-config/#configbase) preset and enables the following:</p>
+<p>Uses the <a href="https://docs.renovatebot.com/presets-config/#configbase">config:base</a> preset and enables the following:</p>
 
 <ul>
 <li>PRs are scheduled to be created every Monday before 3am (UTC), four at the time</li>
