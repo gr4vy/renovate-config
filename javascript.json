@@ -1,7 +1,6 @@
 {
   "extends": ["github>gr4vy/renovate-config", ":disablePeerDependencies"],
   "rangeStrategy": "bump",
-  "reviewers": ["team:javascript-team"],
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["security"],
