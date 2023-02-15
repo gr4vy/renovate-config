@@ -3,8 +3,8 @@
   "rangeStrategy": "bump",
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": ["security"],
-    "commitMessageSuffix": "[SECURITY]",
+    "labels": ["vulnerability"],
+    "commitMessageSuffix": "[VULNERABILITY]",
     "rangeStrategy": "update-lockfile",
     "schedule": [],
     "transitiveRemediation": true
