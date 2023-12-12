@@ -12,13 +12,13 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "addLabels": ["patch"],
+      "labels": ["dependencies", "patch"],
       "automerge": true,
       "semanticCommitScope": "dev-deps"
     },
     {
       "matchDepTypes": ["dependencies"],
-      "addLabels": ["minor"],
+      "labels": ["dependencies", "minor"],
       "semanticCommitScope": "deps"
     },
     {
