@@ -1,6 +1,7 @@
 {
   "extends": ["github>gr4vy/renovate-config", ":disablePeerDependencies"],
   "rangeStrategy": "bump",
+  "assignAutomerge": true,
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["vulnerability"],
