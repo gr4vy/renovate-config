@@ -13,6 +13,10 @@
       "matchDepTypes": ["dependencies"],
       "labels": ["dependencies", "minor"],
       "semanticCommitScope": "deps"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
