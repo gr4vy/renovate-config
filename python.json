@@ -5,13 +5,13 @@
   "packageRules": [
     {
       "matchDepTypes": ["dev-dependencies"],
-      "labels": ["dependencies", "patch"],
+      "labels": ["dependencies", "python", "patch"],
       "automerge": true,
       "semanticCommitScope": "dev-deps"
     },
     {
       "matchDepTypes": ["dependencies"],
-      "labels": ["dependencies", "minor"],
+      "labels": ["dependencies", "python", "minor"],
       "semanticCommitScope": "deps"
     },
     {
