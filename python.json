@@ -2,22 +2,18 @@
   "extends": ["github>gr4vy/renovate-config"],
   "rangeStrategy": "bump",
   "assignAutomerge": true,
+  "semanticCommitScope": "{{ depType }}",
   "packageRules": [
-    {
-      "matchFileNames": ["**/*"],
-      "labels": ["dependencies", "python"],
-      "semanticCommitScope": "{{ depType }}"
-    },
     {
       "matchDepTypes": ["dev-dependencies", "dev"],
       "labels": ["dependencies", "python", "patch"],
       "automerge": true,
-      "semanticCommitScope": "dev-deps"
+      "semanticCommitScope": "{{ depType }}"
     },
     {
       "matchDepTypes": ["dependencies"],
       "labels": ["dependencies", "python", "minor"],
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "{{ depType }}"
     },
     {
       "matchUpdateTypes": ["major"],
