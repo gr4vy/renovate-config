@@ -2,6 +2,7 @@
   "extends": ["github>gr4vy/renovate-config"],
   "rangeStrategy": "bump",
   "assignAutomerge": true,
+  "labels": ["dependencies", "python"],
   "semanticCommitScope": "{{ depType }}",
   "packageRules": [
     {
