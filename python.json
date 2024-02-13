@@ -1,0 +1,18 @@
+{
+  "extends": ["github>gr4vy/renovate-config"],
+  "rangeStrategy": "bump",
+  "assignAutomerge": true,
+  "packageRules": [
+    {
+      "matchDepTypes": ["dev-dependencies"],
+      "labels": ["dependencies", "patch"],
+      "automerge": true,
+      "semanticCommitScope": "dev-deps"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "labels": ["dependencies", "minor"],
+      "semanticCommitScope": "deps"
+    }
+  ]
+}
