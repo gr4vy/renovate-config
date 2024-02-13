@@ -7,17 +7,19 @@
   "packageRules": [
     {
       "matchDepTypes": ["dev-dependencies", "dev"],
-      "labels": ["dependencies", "python", "patch"],
-      "automerge": true,
-      "semanticCommitScope": "{{ depType }}"
+      "addLabels": ["patch"],
+      "automerge": true
     },
     {
       "matchDepTypes": ["dependencies"],
-      "labels": ["dependencies", "python", "minor"],
-      "semanticCommitScope": "{{ depType }}"
+      "addLabels": ["minor"]
     },
     {
       "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchPackagePatterns": ["python"],
       "enabled": false
     }
   ]
