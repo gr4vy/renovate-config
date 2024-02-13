@@ -9,7 +9,7 @@
       "semanticCommitScope": "{{ depType }}"
     },
     {
-      "matchDepTypes": ["dev-dependencies"],
+      "matchDepTypes": ["dev-dependencies", "dev"],
       "labels": ["dependencies", "python", "patch"],
       "automerge": true,
       "semanticCommitScope": "dev-deps"
