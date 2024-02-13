@@ -4,6 +4,11 @@
   "assignAutomerge": true,
   "packageRules": [
     {
+      "matchFileNames": ["**/*"],
+      "labels": ["dependencies", "python"],
+      "semanticCommitScope": "{{ depType }}"
+    },
+    {
       "matchDepTypes": ["dev-dependencies"],
       "labels": ["dependencies", "python", "patch"],
       "automerge": true,
