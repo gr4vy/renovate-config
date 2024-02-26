@@ -10,10 +10,6 @@
       "automerge": true
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "addLabels": ["minor"]
-    },
-    {
       "matchUpdateTypes": ["patch"],
       "addLabels": ["patch"]
     },
