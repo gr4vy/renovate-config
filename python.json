@@ -7,7 +7,6 @@
   "packageRules": [
     {
       "matchDepTypes": ["dev-dependencies", "dev"],
-      "addLabels": ["patch"],
       "automerge": true
     },
     {
@@ -15,7 +14,16 @@
       "addLabels": ["minor"]
     },
     {
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["patch"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["minor"]
+    },
+    {
       "matchUpdateTypes": ["major"],
+      "addLabels": ["major"],
       "enabled": false
     },
     {
