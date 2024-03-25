@@ -2,6 +2,13 @@
   "extends": ["github>gr4vy/renovate-config"],
   "rangeStrategy": "bump",
   "assignAutomerge": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["vulnerability"],
+    "commitMessageSuffix": "[VULNERABILITY]",
+    "rangeStrategy": "update-lockfile",
+    "schedule": []
+  },
   "labels": ["dependencies", "python"],
   "semanticCommitScope": "{{ depType }}",
   "packageRules": [
