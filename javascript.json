@@ -2,6 +2,8 @@
   "extends": ["github>gr4vy/renovate-config", ":disablePeerDependencies"],
   "rangeStrategy": "bump",
   "assignAutomerge": true,
+  "prCreation": "not-pending",
+  "internalChecksFilter": "strict",
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["vulnerability"],
@@ -15,11 +17,13 @@
       "matchDepTypes": ["devDependencies"],
       "labels": ["dependencies", "patch"],
       "automerge": true,
+      "minimumReleaseAge": "3 days",
       "semanticCommitScope": "dev-deps"
     },
     {
       "matchDepTypes": ["dependencies"],
       "labels": ["dependencies", "minor"],
+      "minimumReleaseAge": "3 days",
       "semanticCommitScope": "deps"
     },
     {
