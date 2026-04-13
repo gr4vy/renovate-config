@@ -4,6 +4,7 @@
   "assignAutomerge": true,
   "prCreation": "not-pending",
   "internalChecksFilter": "strict",
+  "dependencyDashboard": true,
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["vulnerability"],
