@@ -14,7 +14,6 @@
     {
       "matchDepTypes": ["devDependencies"],
       "labels": ["dependencies", "patch"],
-      "automerge": true,
       "semanticCommitScope": "dev-deps"
     },
     {
