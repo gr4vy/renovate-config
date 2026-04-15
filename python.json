@@ -30,7 +30,7 @@
       "enabled": false
     },
     {
-      "matchPackagePatterns": ["python"],
+      "matchPackageNames": ["python"],
       "enabled": false
     }
   ]
