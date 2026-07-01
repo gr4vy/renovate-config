@@ -30,7 +30,7 @@
       "enabled": false
     },
     {
-      "matchPackageNames": ["python", "python-version"],
+      "matchDepNames": ["python", "python-version"],
       "enabled": false
     }
   ]
