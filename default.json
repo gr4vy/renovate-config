@@ -6,7 +6,8 @@
     ":prHourlyLimit4",
     ":rebaseStalePrs",
     ":semanticCommits",
-    ":semanticCommitTypeAll(chore)"
+    ":semanticCommitTypeAll(chore)",
+    "helpers:pinGitHubActionDigests"
   ],
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days"
