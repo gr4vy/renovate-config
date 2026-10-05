@@ -9,8 +9,7 @@
     "labels": ["vulnerability"],
     "commitMessageSuffix": "[VULNERABILITY]",
     "rangeStrategy": "update-lockfile",
-    "schedule": [],
-    "transitiveRemediation": true
+    "schedule": []
   },
   "packageRules": [
     {
