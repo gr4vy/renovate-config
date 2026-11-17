@@ -9,11 +9,19 @@
       "groupName": "Python"
     },
     {
-      // TODO: support other formats
-      "description": "Group Python dev minor/patch updates",
+      "description": "Group Python dev (PEP 735) minor/patch updates",
       "matchCategories": ["python"],
       "matchDepTypes": ["dependency-groups"],
       "matchJsonata": ["managerData.depGroup = 'dev'"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Python dev dependencies"
+    },
+    {
+      "description": "Group Python dev (Poetry) minor/patch updates",
+      "matchManagers": ["poetry"],
+      // [tool.poetry.group.dev.dependencies]
+      // [tool.poetry.dev-dependencies] (Poetry < 1.2)
+      "matchDepTypes": ["dev", "dev-dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Python dev dependencies"
     },
@@ -45,10 +53,19 @@
       "automerge": true
     },
     {
-      "description": "Enable automerge for Python dev minor/patch updates",
+      "description": "Enable automerge for Python dev (PEP 735) minor/patch updates",
       "matchCategories": ["python"],
-      "matchDepTypes": ["dependency-groups"], // PEP 735
+      "matchDepTypes": ["dependency-groups"],
       "matchJsonata": ["managerData.depGroup = 'dev'"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Enable automerge for Python dev (Poetry) minor/patch updates",
+      "matchManagers": ["poetry"],
+      // [tool.poetry.group.dev.dependencies]
+      // [tool.poetry.dev-dependencies] (Poetry < 1.2)
+      "matchDepTypes": ["dev", "dev-dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },

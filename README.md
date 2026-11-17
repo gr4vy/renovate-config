@@ -72,7 +72,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <ul>
 <li><code>docker.jsonc</code>: Docker Compose and Dockerfile updates need Dependency Dashboard approval</li>
 <li><code>github-actions.jsonc</code>: updates wait 14 days after release; patch updates are automerged</li>
-<li><code>python.jsonc</code>: Python language, dev (PEP 735) and OpenTelemetry updates are grouped; patch updates, minor updates of 1.x+ packages and dev minor/patch updates are automerged; major updates are not; Python language updates need Dependency Dashboard approval</li>
+<li><code>python.jsonc</code>: Python language, dev (PEP 735 <code>[dependency-groups].dev</code>, Poetry <code>[tool.poetry.group.dev.dependencies]</code> and <code>[tool.poetry.dev-dependencies]</code>) and OpenTelemetry updates are grouped; patch updates, minor updates of 1.x+ packages and dev minor/patch updates are automerged; major updates are not; Python language updates need Dependency Dashboard approval</li>
 </ul>
 
 <p>Preset files use the <code>.jsonc</code> extension, so it must be included in the path. Keep <code>presets/base.jsonc</code> first, and add <code>reviewers</code> and any repository-specific <code>packageRules</code> (these are applied after the presets', so they can override them):</p>
