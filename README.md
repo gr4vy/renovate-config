@@ -49,3 +49,57 @@ In the project's `renovate.json` file, extends any of these presets and add your
 ```
 
 </details>
+
+<details>
+  <summary>Base (<code>presets/base.jsonc</code> + <code>presets/base/*.jsonc</code>)</summary><br>
+
+<p>A modular set of presets meant to be used together: always extend <code>presets/base.jsonc</code>, then add one preset from <code>presets/base/</code> for each ecosystem the repository uses. They are independent of the default preset above.</p>
+
+<p><code>presets/base.jsonc</code> uses <a href="https://docs.renovatebot.com/presets-config/#configrecommended">config:recommended</a> and enables the following:</p>
+
+<ul>
+<li>PRs are opened Monday to Thursday, 9:00–19:59 (Europe/London), at most 10 open at a time</li>
+<li>Updates wait 7 days after release; vulnerability fixes skip every schedule and are labelled <code>vulnerability</code></li>
+<li><code>chore(deps): ...</code> is used for PR titles and commit messages</li>
+<li>Stale PRs are rebased, GitHub Actions are pinned to commit SHAs, and unmaintained dependencies are flagged</li>
+<li>Ranges are bumped (e.g. <code>^1.0.0 -> ^1.1.0</code>)</li>
+<li>PRs are labelled <code>dependencies</code> plus <code>major</code>, <code>minor</code> or <code>patch</code></li>
+<li>Automerge, when a rule enables it, squash-merges the PR at any time and is not assigned to anyone</li>
+</ul>
+
+<p>Add-ons in <code>presets/base/</code>:</p>
+
+<ul>
+<li><code>docker.jsonc</code>: Docker Compose and Dockerfile updates need Dependency Dashboard approval</li>
+<li><code>github-actions.jsonc</code>: updates wait 14 days after release; patch updates are automerged</li>
+<li><code>python.jsonc</code>: Python language, dev (PEP 735) and OpenTelemetry updates are grouped; patch updates, minor updates of 1.x+ packages and dev minor/patch updates are automerged; major updates are not; Python language updates need Dependency Dashboard approval</li>
+</ul>
+
+<p>Preset files use the <code>.jsonc</code> extension, so it must be included in the path. Keep <code>presets/base.jsonc</code> first, and add <code>reviewers</code> and any repository-specific <code>packageRules</code> (these are applied after the presets', so they can override them):</p>
+
+```jsonc
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>gr4vy/renovate-config//presets/base.jsonc",
+    "github>gr4vy/renovate-config//presets/base/docker.jsonc",
+    "github>gr4vy/renovate-config//presets/base/github-actions.jsonc",
+    "github>gr4vy/renovate-config//presets/base/python.jsonc"
+  ],
+
+  "reviewers": ["team:my-team"],
+
+  "packageRules": [
+    // Automerge
+    {
+      "description": "Disable automerge for specific Python major/minor updates",
+      "matchCategories": ["python"],
+      "matchUpdateTypes": ["major", "minor"],
+      "matchPackageNames": ["sentry-sdk"],
+      "automerge": false
+    }
+  ]
+}
+```
+
+</details>

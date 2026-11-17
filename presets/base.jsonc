@@ -1,0 +1,54 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":rebaseStalePrs",
+    // Commit messages format: "chore(deps): ..."
+    ":semanticCommitScope(deps)",
+    ":semanticCommitTypeAll(chore)",
+    ":semanticCommits",
+    "abandonments:recommended", // Flag unmaintained dependencies
+    "helpers:pinGitHubActionDigests" // Pin GitHub Actions to commit SHAs
+  ],
+
+  "assignAutomerge": false,
+  "automergeSchedule": ["at any time"],
+  "automergeStrategy": "squash",
+  "automergeType": "pr",
+  "labels": ["dependencies"],
+  "minimumReleaseAge": "7 days",
+  "platformAutomerge": true,
+  "prConcurrentLimit": 10,
+  "rangeStrategy": "bump",
+  "schedule": ["* 9-19 * * 1-4"], // PRs can be opened during working hours
+  "timezone": "Europe/London",
+  "updateNotScheduled": false,
+
+  "vulnerabilityAlerts": {
+    "addLabels": ["vulnerability"],
+    "enabled": true,
+    "rangeStrategy": "update-lockfile",
+    // Security fixes skip every schedule
+    "automergeSchedule": [],
+    "schedule": []
+  },
+
+  "packageRules": [
+    // Labels
+    {
+      "description": "Label major updates",
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["major"]
+    },
+    {
+      "description": "Label minor updates",
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["minor"]
+    },
+    {
+      "description": "Label patch updates",
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["patch"]
+    }
+  ]
+}

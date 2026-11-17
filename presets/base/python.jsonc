@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "packageRules": [
+    // Groups
+    {
+      "description": "Group Python language updates",
+      "matchPackageNames": ["python"],
+      "groupName": "Python"
+    },
+    {
+      // TODO: support other formats
+      "description": "Group Python dev minor/patch updates",
+      "matchCategories": ["python"],
+      "matchDepTypes": ["dependency-groups"],
+      "matchJsonata": ["managerData.depGroup = 'dev'"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Python dev dependencies"
+    },
+    {
+      "description": "Group Python OpenTelemetry updates",
+      "matchCategories": ["python"],
+      "matchPackageNames": ["opentelemetry-*"],
+      "groupName": "Python OpenTelemetry"
+    },
+
+    // Automerge
+    {
+      "description": "Disable automerge for Python major updates",
+      "matchCategories": ["python"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Enable automerge for Python minor stable updates",
+      "matchCategories": ["python"],
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "!/^v?0/", // Excludes 0.x packages, where a minor bump can be breaking
+      "automerge": true
+    },
+    {
+      "description": "Enable automerge for Python patch updates",
+      "matchCategories": ["python"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "description": "Enable automerge for Python dev minor/patch updates",
+      "matchCategories": ["python"],
+      "matchDepTypes": ["dependency-groups"], // PEP 735
+      "matchJsonata": ["managerData.depGroup = 'dev'"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+
+    // Manually-requested (never auto-merged)
+    {
+      "description": "Require Dependency Dashboard approval for Python language updates",
+      "matchPackageNames": ["python"],
+      "automerge": false,
+      "dependencyDashboardApproval": true
+    }
+  ]
+}
