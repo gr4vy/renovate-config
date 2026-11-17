@@ -18,6 +18,7 @@
   "labels": ["dependencies"],
   "minimumReleaseAge": "7 days",
   "platformAutomerge": true,
+  "platformCommit": "enabled",
   "prConcurrentLimit": 10,
   "rangeStrategy": "bump",
   "schedule": ["* 9-19 * * 1-4"], // PRs can be opened during working hours

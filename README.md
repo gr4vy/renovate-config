@@ -64,6 +64,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <li>Stale PRs are rebased, GitHub Actions are pinned to commit SHAs, and unmaintained dependencies are flagged</li>
 <li>Ranges are bumped (e.g. <code>^1.0.0 -> ^1.1.0</code>)</li>
 <li>PRs are labelled <code>dependencies</code> plus <code>major</code>, <code>minor</code> or <code>patch</code></li>
+<li>Commits are created through the GitHub API, so they are signed (verified)</li>
 <li>Automerge, when a rule enables it, squash-merges the PR at any time and is not assigned to anyone</li>
 </ul>
 
