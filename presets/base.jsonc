@@ -12,6 +12,7 @@
   ],
 
   "assignAutomerge": false,
+  "automerge": false,
   "automergeSchedule": ["at any time"],
   "automergeStrategy": "squash",
   "automergeType": "pr",
