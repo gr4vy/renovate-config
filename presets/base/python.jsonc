@@ -5,7 +5,10 @@
     // Groups
     {
       "description": "Group Python language updates",
-      "matchPackageNames": ["python"],
+      "matchPackageNames": [
+        "containerbase/python-prebuild", // Poetry [tool.poetry.dependencies] python
+        "python" // requires-python (PEP 621), Dockerfile, etc
+      ],
       "groupName": "Python"
     },
     {
@@ -71,7 +74,10 @@
     // Manually-requested (never auto-merged)
     {
       "description": "Require Dependency Dashboard approval for Python language updates",
-      "matchPackageNames": ["python"],
+      "matchPackageNames": [
+        "containerbase/python-prebuild", // Poetry [tool.poetry.dependencies] python
+        "python" // requires-python (PEP 621), Dockerfile, etc
+      ],
       "automerge": false,
       "dependencyDashboardApproval": true
     }
