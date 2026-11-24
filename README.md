@@ -65,7 +65,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <li>Ranges are bumped (e.g. <code>^1.0.0 -> ^1.1.0</code>)</li>
 <li>PRs are labelled <code>dependencies</code> plus <code>major</code>, <code>minor</code> or <code>patch</code></li>
 <li>Commits are created through the GitHub API, so they are signed (verified)</li>
-<li>Automerge, when a rule enables it, squash-merges the PR at any time and is not assigned to anyone</li>
+<li>When a rule enables automerge, Renovate turns on GitHub's auto-merge for the PR (squash) and assigns no one; GitHub merges it once its required checks pass. Renovate only creates, rebases and updates branches during the schedule, so a PR that falls behind <code>main</code> waits for the next window to be brought up to date. In practice, auto-merged PRs land during schedule hours too, except in edge cases such as checks that finish just after the window closes</li>
 </ul>
 
 <p>Add-ons in <code>presets/base/</code>:</p>
@@ -73,7 +73,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <ul>
 <li><code>docker.jsonc</code>: Docker Compose and Dockerfile updates need Dependency Dashboard approval</li>
 <li><code>github-actions.jsonc</code>: updates wait 14 days after release; patch updates are automerged</li>
-<li><code>python.jsonc</code>: Python language, dev (PEP 735 <code>[dependency-groups].dev</code>, Poetry <code>[tool.poetry.group.dev.dependencies]</code> and <code>[tool.poetry.dev-dependencies]</code>) and OpenTelemetry updates are grouped; patch updates, minor updates of 1.x+ packages and dev minor/patch updates are automerged; major updates are not; Python language updates need Dependency Dashboard approval</li>
+<li><code>python.jsonc</code>: Python language, dev (PEP 735 <code>[dependency-groups].dev</code> and Poetry <code>[tool.poetry.group.dev.dependencies]</code>) and OpenTelemetry updates are grouped; patch updates, minor updates of 1.x+ packages and dev minor/patch updates are automerged; major updates are not; Python language updates need Dependency Dashboard approval</li>
 </ul>
 
 <p>Preset files use the <code>.jsonc</code> extension, so it must be included in the path. Keep <code>presets/base.jsonc</code> first, and add <code>reviewers</code> and any repository-specific <code>packageRules</code> (these are applied after the presets', so they can override them):</p>
