@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "packageRules": [
+    // Schedules
+    {
+      "description": "Wait 14 days before proposing GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "minimumReleaseAge": "14 days"
+    },
+
+    // Automerge
+    {
+      "description": "Enable automerge for GitHub Actions patch updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    }
+  ]
+}

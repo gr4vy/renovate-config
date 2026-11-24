@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "packageRules": [
+    // Manually-requested (never auto-merged)
+    {
+      "description": "Require Dependency Dashboard approval for Docker Compose updates",
+      "matchManagers": ["docker-compose"],
+      "automerge": false,
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Require Dependency Dashboard approval for Dockerfile updates",
+      "matchManagers": ["dockerfile"],
+      "automerge": false,
+      "dependencyDashboardApproval": true
+    }
+  ]
+}
