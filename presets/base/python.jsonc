@@ -33,6 +33,18 @@
       "matchPackageNames": ["opentelemetry-*"],
       "groupName": "Python OpenTelemetry"
     },
+    {
+      // Contrib packages (e.g. opentelemetry-instrumentation-*) only publish
+      // betas, each pinned to one SDK release. Without this, Renovate stays on
+      // the current beta (0.66b2 -> 0.67b0 changes the release), so they fall
+      // behind the stable packages in the same group.
+      "description": "Allow Python OpenTelemetry beta-only packages to update to newer betas",
+      "matchCategories": ["python"],
+      "matchPackageNames": ["opentelemetry-*"],
+      // Only packages already on a prerelease, so stable ones never move to alphas/RCs
+      "matchCurrentVersion": "/^\\d+(\\.\\d+)*(a|b|rc)\\d+$/",
+      "ignoreUnstable": false
+    },
 
     // Automerge
     {
