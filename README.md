@@ -62,6 +62,7 @@ In the project's `renovate.json` file, extends any of these presets and add your
 <li>Updates wait 7 days after release; vulnerability fixes skip every schedule and are labelled <code>vulnerability</code>.</li>
 <li><code>chore(deps): ...</code> is used for PR titles and commit messages.</li>
 <li>Stale PRs are rebased, GitHub Actions are pinned to commit SHAs, and unmaintained dependencies are flagged.</li>
+<li>pre-commit hooks (<code>.pre-commit-config.yaml</code>) are updated; Renovate's pre-commit manager is disabled by default.</li>
 <li>Ranges are bumped (e.g. <code>^1.0.0 -> ^1.1.0</code>).</li>
 <li>PRs are labelled <code>dependencies</code> plus <code>major</code>, <code>minor</code> or <code>patch</code>.</li>
 <li>Commits are created through the GitHub API, so they are signed (verified).</li>
