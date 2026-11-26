@@ -1,0 +1,74 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "packageRules": [
+    // Groups
+    {
+      "description": "Group Go language updates",
+      "matchPackageNames": [
+        "go", // go.mod go/toolchain directives
+        "golang" // Dockerfile, etc
+      ],
+      "groupName": "Go"
+    },
+    {
+      "description": "Group Go subrepositories updates",
+      "matchCategories": ["golang"],
+      "matchPackageNames": ["golang.org/x/**"],
+      "groupName": "Go subrepositories"
+    },
+    {
+      "description": "Group Go OpenTelemetry updates",
+      "matchCategories": ["golang"],
+      "matchPackageNames": ["go.opentelemetry.io/**"],
+      "groupName": "Go OpenTelemetry"
+    },
+
+    // Enablements TODO: change comment?
+    {
+      "description": "Enable Go indirect dependencies updates",
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["indirect"],
+      "enabled": true
+    },
+
+    // Automerge
+    {
+      "description": "Disable automerge for Go major updates",
+      "matchCategories": ["golang"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Enable automerge for Go minor stable updates",
+      "matchCategories": ["golang"],
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "!/^v?0/", // Excludes 0.x packages, where a minor bump can be breaking
+      "automerge": true
+    },
+    {
+      "description": "Enable automerge for Go patch updates",
+      "matchCategories": ["golang"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+
+    // Manually-requested (never auto-merged)
+    {
+      "description": "Require Dependency Dashboard approval for Go language updates",
+      "matchPackageNames": [
+        "go", // go.mod go/toolchain directives
+        "golang" // Dockerfile, etc
+      ],
+      "automerge": false,
+      "dependencyDashboardApproval": true
+    },
+
+    // Miscellaneous
+    {
+      "description": "Run post-update tasks after Go module updates",
+      "matchManagers": ["gomod"],
+      "postUpdateOptions": ["gomodTidy", "gomodTidyAll", "gomodUpdateImportPaths"]
+    }
+  ]
+}
