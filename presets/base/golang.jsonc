@@ -26,6 +26,12 @@
       "groupName": "Go subrepositories"
     },
     {
+      "description": "Group Go genproto updates",
+      "matchCategories": ["golang"],
+      "matchPackageNames": ["google.golang.org/genproto{,/**}"],
+      "groupName": "Go genproto"
+    },
+    {
       "description": "Group Go OpenTelemetry updates",
       "matchCategories": ["golang"],
       "matchPackageNames": ["go.opentelemetry.io/**"],
