@@ -2,6 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
   "packageRules": [
+    // Scope
+    {
+      "description": "Enable Go indirect dependencies updates",
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["indirect"],
+      "enabled": true
+    },
+
     // Groups
     {
       "description": "Group Go language updates",
@@ -22,14 +30,6 @@
       "matchCategories": ["golang"],
       "matchPackageNames": ["go.opentelemetry.io/**"],
       "groupName": "Go OpenTelemetry"
-    },
-
-    // Enablements TODO: change comment?
-    {
-      "description": "Enable Go indirect dependencies updates",
-      "matchManagers": ["gomod"],
-      "matchDepTypes": ["indirect"],
-      "enabled": true
     },
 
     // Automerge
