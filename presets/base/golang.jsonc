@@ -52,14 +52,24 @@
       "matchUpdateTypes": ["patch"],
       "automerge": true
     },
-
-    // Manually-requested (never auto-merged)
     {
-      "description": "Require Dependency Dashboard approval for Go language updates",
+      "description": "Disable automerge for Go language minor/patch updates",
       "matchPackageNames": [
         "go", // go.mod go/toolchain directives
         "golang" // Dockerfile, etc
       ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": false
+    },
+
+    // Manually-requested (never auto-merged)
+    {
+      "description": "Require Dependency Dashboard approval for Go language major updates",
+      "matchPackageNames": [
+        "go", // go.mod go/toolchain directives
+        "golang" // Dockerfile, etc
+      ],
+      "matchUpdateTypes": ["major"],
       "automerge": false,
       "dependencyDashboardApproval": true
     },
